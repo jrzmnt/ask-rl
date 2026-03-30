@@ -1,0 +1,4 @@
+regimes:
+  - rl_only
+  - slm_only
+  - gated

@@ -1,0 +1,40 @@
+You are assisting a reinforcement learning agent in a navigation task.
+
+The agent is uncertain about the next action.
+
+State:
+The following JSON describes the current symbolic state.
+All necessary information is contained below.
+
+State JSON:
+{observation}
+
+Tile types:
+F = safe
+H = hole
+G = goal
+OUT_OF_BOUNDS = invalid move
+
+Rules:
+- You can move only UP RIGHT DOWN LEFT
+- Never move into H or OUT_OF_BOUNDS
+- Prefer moves that reduce the distance to the goal
+- Avoid positions listed in "visited" unless no other valid move exists
+- Do not reverse the "last_action" unless no other valid move exists
+- Prefer actions that strictly reduce "current_distance"
+- Use "action_effects" to compare outcomes
+- Avoid oscillations using "visited" and "last_action"
+
+IMPORTANT:
+- "valid_actions" defines a CLOSED SET of allowed actions.
+- Any action not listed in "valid_actions" is INVALID.
+- You MUST select one element EXACTLY as written in "valid_actions".
+
+Output format (STRICT):
+- Output must be EXACTLY one of the strings in "valid_actions"
+- Output must match the string exactly (case-sensitive)
+- Output must contain NO other text, symbols, or whitespace
+
+If you output anything not in "valid_actions", the action will be considered INVALID.
+
+Next action:
