@@ -1,0 +1,11 @@
+name: medium
+
+slm:
+  model: Qwen/Qwen2.5-3B-Instruct
+
+decoding:
+  max_tokens: 64
+  temperature: 0.5
+
+prompt:
+  file: prompts/action_only.txt

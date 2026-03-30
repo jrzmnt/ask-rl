@@ -1,0 +1,30 @@
+name: small
+
+seed: 42
+n_episodes: 5
+
+env:
+  split: eval
+
+slm:
+  provider: hf
+  model: Qwen/Qwen2.5-1.5B-Instruct
+  dtype: float16
+  device: cuda
+
+decoding:
+  max_tokens: 400000
+  top_p: 1.0
+  do_sample: false
+
+
+prompt:
+  file: prompts/action_only.txt
+  mode: action_only
+  maze_shape: [5, 5]
+
+parse:
+  strategy: json
+
+debug_prompt: true
+use_cache: false

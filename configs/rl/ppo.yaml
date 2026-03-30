@@ -1,0 +1,83 @@
+algorithm: PPO
+
+experiment:
+  seed: 42
+  episodes_eval: 20
+
+  # Method
+  regime: rl_only   # rl_only | slm_only | gated
+
+training:
+  total_timesteps: 20000000
+
+policy:
+  type: MlpPolicy
+
+env:
+  name: labyrinth
+
+  # Environment (maze)
+  regime: frozenlake-4,frozenlake-5,frozenlake-6,frozenlake-7,frozenlake-8
+
+  regimes:
+    simple:
+      shape: [5, 5]
+      key_and_door: false
+      occlusion: false
+      icy_floor: false
+      max_steps: 200000
+      labyrinth_dir: ./tmp/labyrinths5/train
+
+    key_and_door:
+      shape: [15, 15]
+      key_and_door: true
+      occlusion: false
+      icy_floor: false
+      max_steps: 200
+
+    occlusion:
+      shape: [15, 15]
+      key_and_door: false
+      occlusion: true
+      icy_floor: false
+      max_steps: 200
+
+    icy_floor:
+      shape: [15, 15]
+      key_and_door: false
+      occlusion: false
+      icy_floor: true
+      max_steps: 200
+
+    minigrid:
+      id: MiniGrid-DoorKey-5x5-v0
+
+    frozenlake-4:
+      id: "FrozenLake-v1"
+      size: 4
+
+    frozenlake-5:
+      id: "FrozenLake-v1"
+      size: 5
+
+    frozenlake-6:
+      id: "FrozenLake-v1"
+      size: 6
+
+    frozenlake-7:
+      id: "FrozenLake-v1"
+      size: 7
+
+    frozenlake-8:
+      id: "FrozenLake-v1"
+      size: 8
+
+slm:
+  enabled: false
+  model: small
+
+gating:
+  type: entropy
+  threshold: 0.4
+
+device: auto

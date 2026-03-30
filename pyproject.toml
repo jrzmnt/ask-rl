@@ -1,0 +1,64 @@
+[project]
+name = "ask-when-unsure"
+version = "0.1.0"
+description = "PPO with uncertainty gating using SLMs on the Labyrinth environment"
+readme = "README.md"
+requires-python = "==3.11.14"
+
+dependencies = [
+  # Core
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "pyyaml>=6.0",
+  "matplotlib>=3.8",
+  "tqdm>=4.66",
+  "rich>=13.7",
+  # RL stack
+  "stable-baselines3[extra]>=2.3.0",
+  "huggingface-sb3>=3.0.0",
+  "gymnasium>=0.29",
+  "shimmy>=1.3.0",
+  # Gym
+  "gym>=0.26,<0.27",
+  "minigrid>=2.3.0",
+  # Labyrinth environment
+  "labyrinth @ git+https://github.com/NathanGavenski/Labyrinth.git",
+  "transformers>=4.57.3",
+  "accelerate>=1.12.0",
+  "safetensors>=0.7.0",
+  "sentencepiece>=0.2.1",
+  "tabulate>=0.9.0",
+  "optuna>=4.6.0",
+]
+
+[project.optional-dependencies]
+
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.6.0",
+]
+
+slm = [
+  "transformers>=4.45",
+  "accelerate>=0.34",
+  "safetensors>=0.4",
+  "sentencepiece>=0.2",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

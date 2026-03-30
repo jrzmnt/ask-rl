@@ -1,0 +1,9 @@
+mode: action_only
+output_space: discrete
+num_actions: 4
+
+# MUITO IMPORTANTE
+max_tokens: 2500
+temperature: 0.0
+do_sample: false
+pad_token_id: 2
