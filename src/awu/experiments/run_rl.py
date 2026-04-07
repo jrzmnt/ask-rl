@@ -6,13 +6,10 @@ from typing import Dict, Any
 import yaml
 
 import gymnasium as gym
-import minigrid
-from minigrid.wrappers import FlatObsWrapper
 import numpy as np
 from stable_baselines3 import PPO
 from stable_baselines3.common.monitor import Monitor
 
-from awu.envs.labyrinth_env import LabyrinthEnv
 from awu.envs.frozen_lake import FrozenLake
 from awu.utils.ppo import DropoutActorCriticPolicy
 from awu.utils.callbacks import EvalCallbackWithEvalMode, EvalCallbackFrozenlake
@@ -29,12 +26,7 @@ def load_config(path: str) -> Dict[str, Any]:
 
 
 def load_env(env_regime: str, env_config: Dict[str, Any]) -> gym.Env:
-    if env_regime == "minigrid":
-        return FlatObsWrapper(gym.make(**env_config))
-    elif "frozenlake" in env_regime:
-        return FrozenLake(**env_config)
-    else:
-        return LabyrinthEnv(**env_config)
+    return FrozenLake(**env_config)
 
 
 def set_seed(seed: int):
@@ -74,7 +66,6 @@ def main():
             print("Using settings:", raw_env_cfg)
             print()
 
-            # Remove keys not supported by LabyrinthEnv
             env_cfg = {
                 k: v for k, v in raw_env_cfg.items()
                 if k != "max_steps"

@@ -78,22 +78,3 @@ def rollout_episode(
             break
 
     return trajectory
-
-
-# if __name__ == "__main__":
-#     from gymnasium.wrappers import TimeLimit
-#     from stable_baselines3 import PPO
-
-#     from awu.envs.labyrinth_gym_adapter import LabyrinthGymAdapter
-
-#     env = LabyrinthGymAdapter(shape=(5, 5))
-#     env = TimeLimit(env, max_episode_steps=50)
-
-#     model = PPO("MlpPolicy", env, verbose=0)
-#     model.learn(total_timesteps=5_000)
-
-#     traj = rollout_episode(model, env)
-
-#     print("Steps:", len(traj["entropy"]))
-#     print("Entropy (first 5):", traj["entropy"][:5])
-#     print("Entropy (mean):", np.mean(traj["entropy"]))

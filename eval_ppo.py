@@ -8,15 +8,12 @@ import os
 
 import gymnasium as gym
 from huggingface_sb3 import load_from_hub
-import minigrid
-from minigrid.wrappers import FlatObsWrapper
 import numpy as np
 from stable_baselines3 import PPO
 from tabulate import tabulate
 from tqdm import tqdm
 import torch
 
-from awu.envs.labyrinth_env import LabyrinthEnv
 from awu.envs.frozen_lake import FrozenLake
 
 
@@ -34,12 +31,7 @@ def load_config(path: str) -> Dict[str, Any]:
 
 
 def load_env(env_regime: str, env_config: Dict[str, Any]) -> gym.Env:
-    if env_regime == "minigrid":
-        return FlatObsWrapper(gym.make(**env_config))
-    elif "frozenlake" in env_regime:
-        return FrozenLake(**env_config)
-    else:
-        return LabyrinthEnv(**env_config)
+    return FrozenLake(**env_config)
 
 
 def set_seed(seed: int):

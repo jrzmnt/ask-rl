@@ -15,7 +15,7 @@ import yaml
 
 from stable_baselines3 import PPO
 
-from awu.envs.labyrinth_env import LabyrinthEnv
+from awu.envs.frozen_lake import FrozenLake
 from awu.uncertainty.entropy import policy_entropy
 from awu.experiments.controls import EntropyGate
 
@@ -59,16 +59,15 @@ def main():
     device = cfg.get("device", "auto")
 
     # ---------- environment ----------
-    env_regime = cfg["env"]["regime"]
+    env_regime = cfg["env"]["regime"].split(",")[0]
     raw_env_cfg = cfg["env"]["regimes"][env_regime]
 
-    # Remove keys not supported by LabyrinthEnv
     env_cfg = {
         k: v for k, v in raw_env_cfg.items()
         if k != "max_steps"
     }
 
-    env = LabyrinthEnv(**env_cfg)
+    env = FrozenLake(**env_cfg)
 
 
     # ---------- model ----------

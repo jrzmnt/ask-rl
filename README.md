@@ -126,7 +126,7 @@ experiment:
 │   ├── run_gated.sh       # ASK gated rollout
 │   └── setup.sh           # Install dependencies
 └── src/awu/
-    ├── envs/              # FrozenLake and Labyrinth environments
+    ├── envs/              # FrozenLake environment
     ├── experiments/       # Training and rollout entry points
     ├── slm/               # SLM loading, prompting, and parsing
     ├── uncertainty/       # MC Dropout uncertainty estimation

@@ -7,7 +7,7 @@ import yaml
 import pandas as pd
 import math
 
-from awu.envs.labyrinth_env import LabyrinthEnv
+from awu.envs.frozen_lake import FrozenLake
 from awu.slm.model import load_slm
 from awu.slm.prompt import load_prompt, PromptTemplate
 from awu.slm.parse import parse_action
@@ -63,7 +63,7 @@ def main():
     # ---------- environment ----------
     raw_env_cfg = cfg["env"]
     env_cfg = {k: v for k, v in raw_env_cfg.items() if k != "split"}
-    env = LabyrinthEnv(**env_cfg)
+    env = FrozenLake(**env_cfg)
 
     # ---------- SLM ----------
     slm = load_slm(cfg["slm"])

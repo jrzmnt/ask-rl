@@ -1,7 +1,7 @@
 [project]
 name = "ask-when-unsure"
 version = "0.1.0"
-description = "PPO with uncertainty gating using SLMs on the Labyrinth environment"
+description = "PPO with uncertainty gating using SLMs on the FrozenLake environment"
 readme = "README.md"
 requires-python = "==3.11.14"
 
@@ -20,9 +20,6 @@ dependencies = [
   "shimmy>=1.3.0",
   # Gym
   "gym>=0.26,<0.27",
-  "minigrid>=2.3.0",
-  # Labyrinth environment
-  "labyrinth @ git+https://github.com/NathanGavenski/Labyrinth.git",
   "transformers>=4.57.3",
   "accelerate>=1.12.0",
   "safetensors>=0.7.0",
