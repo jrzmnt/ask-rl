@@ -1,10 +1,10 @@
 # When to ASK: Uncertainty-Gated Language Assistance for Reinforcement Learning
 
-[![IJCNN 2026](https://img.shields.io/badge/IJCNN-2026-blue)](https://2026.ijcnn.org)
+[![IJCNN 2026](https://img.shields.io/badge/IJCNN-2026-blue)](https://attend.ieee.org/wcci-2026/)
 [![Python 3.11](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 [![HuggingFace](https://img.shields.io/badge/🤗%20Model-ppo--FrozenLake--v1--8x8-yellow)](https://huggingface.co/NathanGavenski/ppo-FrozenLake-v1-8x8)
-[![arXiv](https://img.shields.io/badge/arXiv-paper-b31b1b)](https://arxiv.org)
+[![arXiv](https://img.shields.io/badge/arXiv-paper-b31b1b)](https://arxiv.org/pdf/2604.02226)
 
 Official implementation of **ASK** (Adaptive Safety through Knowledge), an extrinsic method that improves out-of-distribution (OOD) generalization in reinforcement learning by selectively querying a Language Model (LM) based on uncertainty estimates, without retraining the RL policy.
 
@@ -137,17 +137,20 @@ experiment:
 
 ## Acknowledgments
 
-This work was partially supported by UK Research and Innovation [grant number EP/S023356/1], in the UKRI Centre for Doctoral Training in Safe and Trusted Artificial Intelligence (www.safeandtrustedai.org).
+This work was partially supported by UK Research and Innovation [grant number EP/S023356/1], in the UKRI Centre for Doctoral Training in Safe and Trusted Artificial Intelligence (www.safeandtrustedai.org), and by the Kunumi Institute (https://www.kunuminst.org/), through individual grants awarded to the authors.
 
 ---
 
 ## Citation
 
 ```bibtex
-@inproceedings{monteiro2026ask,
-  title     = {When to {ASK}: Uncertainty-Gated Language Assistance for Reinforcement Learning},
-  author    = {Monteiro, Juarez and Gavenski, Nathan and Zuin, Gianlucca and Veloso, Adriano},
-  booktitle = {Proceedings of the International Joint Conference on Neural Networks (IJCNN)},
-  year      = {2026},
+@inproceedings{7fc4d3b96a2c441d92209a877e111a5d,
+  title     = "When to ASK: Uncertainty-Gated Language Assistance for Reinforcement Learning",
+  author    = "Juarez Monteiro and Nathan Gavenski and Gianlucca Zuin and Adriano Veloso",
+  booktitle = "Proceedings of the 2026 International Joint Conference on Neural Networks (IJCNN)",
+  year      = "2026",
+  month     = jun,
+  note      = "Conference date: 21-06-2026 Through 26-06-2026",
+  url       = "https://attend.ieee.org/wcci-2026/",
 }
 ```
